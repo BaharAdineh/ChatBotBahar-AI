@@ -3,7 +3,7 @@ package com.challenge.chatbotbahar.controller;
 import com.google.cloud.dialogflow.v2.*;
 import org.springframework.web.bind.annotation.*;
 import com.challenge.chatbotbahar.domain.WebhookResponse;
-
+import com.challenge.chatbotbahar.domain.WebhookRequest;
 @RestController
 @RequestMapping(value = "/dialogflow", produces = "application/json")
 public class DialogflowController {
