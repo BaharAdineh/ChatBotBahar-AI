@@ -3,7 +3,7 @@ package com.challenge.chatbotbahar.domain;
 import com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest;
 import com.google.cloud.dialogflow.v2.QueryResult;
 
-public class WebhookRequest {
+public class WebhookRequestHandler {
     private String responseId;
     private QueryResult queryResult;
     private OriginalDetectIntentRequest originalDetectIntentRequest;

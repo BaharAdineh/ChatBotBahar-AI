@@ -14,7 +14,7 @@ public class PositiveFeedbackIntentHandler {
         Builder builder = WebhookResponse.newBuilder();
 
         // Set the response text
-        Text text = Text.newBuilder().setText("Thank you for your positive feedback!").build();
+        Text text = Text.newBuilder().addText("Thank you for your positive feedback!").build();
         Message message = Message.newBuilder().setText(text).build();
         builder.addFulfillmentMessages(message);
 

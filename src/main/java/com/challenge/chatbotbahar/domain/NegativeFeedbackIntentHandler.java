@@ -14,7 +14,8 @@ public class NegativeFeedbackIntentHandler {
         Builder builder = WebhookResponse.newBuilder();
 
         // Set the response text
-        Text text = Text.newBuilder().setText("We're sorry to hear that. Please provide more details so we can improve.").build();
+        Text text = Text.newBuilder().addText("We're sorry to hear that. Please provide more details so we can improve.").build();
+
         Message message = Message.newBuilder().setText(text).build();
         builder.addFulfillmentMessages(message);
 

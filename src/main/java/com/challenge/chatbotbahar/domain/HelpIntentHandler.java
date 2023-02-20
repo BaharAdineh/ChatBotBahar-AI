@@ -14,7 +14,7 @@ public class HelpIntentHandler {
         Builder builder = WebhookResponse.newBuilder();
 
         // Set the response text
-        Text text = Text.newBuilder().setText("I'm here to help! How can I assist you today?").build();
+        Text text = Text.newBuilder().addText("I'm here to help! How can I assist you today?").build();
         Message message = Message.newBuilder().setText(text).build();
         builder.addFulfillmentMessages(message);
 

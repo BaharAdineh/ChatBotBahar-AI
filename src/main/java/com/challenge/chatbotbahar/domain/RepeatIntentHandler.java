@@ -14,7 +14,7 @@ public class RepeatIntentHandler {
         Builder builder = WebhookResponse.newBuilder();
 
         // Set the response text
-        Text text = Text.newBuilder().setText("Sure, here's what I said earlier: [insert earlier response]").build();
+        Text text = Text.newBuilder().addText("Sure, here's what I said earlier: [insert earlier response]").build();
         Message message = Message.newBuilder().setText(text).build();
         builder.addFulfillmentMessages(message);
 

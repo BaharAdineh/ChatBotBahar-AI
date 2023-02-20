@@ -14,7 +14,8 @@ public class ConfirmationIntentHandler {
         Builder builder = WebhookResponse.newBuilder();
 
         // Set the response text
-        Text text = Text.newBuilder().setText("Thank you for confirming. Is there anything else you'd like to share with us?").build();
+        Text text = Text.newBuilder().addText("Thank you for confirming. Is there anything else you'd like to share with us?").build();
+
         Message message = Message.newBuilder().setText(text).build();
         builder.addFulfillmentMessages(message);
 
