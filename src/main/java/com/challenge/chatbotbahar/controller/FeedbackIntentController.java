@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FeedbackIntentController {
+    private String previousResponse;
 
     @PostMapping("/webhook")
     public WebhookResponse handleWebhook(@RequestBody WebhookRequest request) {
@@ -32,6 +33,7 @@ public class FeedbackIntentController {
                 return handleUnknown(request);
         }
     }
+
 
     private WebhookResponse handleWelcome(WebhookRequest request) {
         return WebhookResponse.newBuilder()
@@ -69,8 +71,7 @@ public class FeedbackIntentController {
     }
 
     private WebhookResponse handleRepeat(WebhookRequest request) {
-        // Get the previous response and repeat it back to the user
-        String previousResponse = // Code to retrieve previous response
+        String previousResponse = request.getQueryResult().getFulfillmentText();
         return WebhookResponse.newBuilder()
                 .setFulfillmentText(previousResponse)
                 .build();
